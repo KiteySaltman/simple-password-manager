@@ -149,10 +149,12 @@ class MainWindow(QtWidgets.QMainWindow):
             self.add_note_to_listwidget(note)
             self.lw_notes.sortItems(QtCore.Qt.AscendingOrder)
 
+
     def export(self):
         file, type = QtWidgets.QFileDialog.getSaveFileName(self, 'Save file', filter="csv")
         if file:
             export_to_csv(file=file)
+
 
     def delete_selected_note(self):
         selected_item = self.get_selected_lw_item()
@@ -170,6 +172,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return selected_items[0]
         return None
 
+
     def import_csv(self):
         file = QtWidgets.QFileDialog.getOpenFileName(self, 'Import CSV file')
         if file:
@@ -181,6 +184,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.populate_note()
             else:
                 print("not csv file")
+
 
     def populate_note(self):
         notes = get_notes()
