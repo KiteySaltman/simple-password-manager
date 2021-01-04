@@ -14,7 +14,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, ctx):
         super().__init__()
         self.ctx = ctx
-        self.setWindowTitle("Password Manager")
+        self.setWindowTitle("Simple Password Manager")
         self.setup_ui()
         self.populate_note()
 
