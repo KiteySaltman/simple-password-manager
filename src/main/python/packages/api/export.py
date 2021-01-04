@@ -2,6 +2,7 @@ import os
 
 from packages.api.note import get_notes
 
+
 def export_to_csv(file=""):
     if file:
         file_path, file_type = os.path.splitext(file)
@@ -11,7 +12,7 @@ def export_to_csv(file=""):
 
         notes = get_notes()
         file = file_path + file_type
-    else :
+    else:
         file = "export.csv"
 
     with open(file, "w") as f:
