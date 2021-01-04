@@ -9,6 +9,7 @@ from packages.api.note import Note, get_notes
 from packages.api.export import export_to_csv
 from packages.api.import_csv import import_csv
 
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, ctx):
         super().__init__()
