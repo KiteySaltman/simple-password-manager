@@ -5,7 +5,7 @@ Format for import from CSV :
 
 Title | Login | Password | Other information
 
-![csv exemple](/images/csv.png)
+![csv exemple](/csv.png)
 
 Shortcut :
 
