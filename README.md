@@ -13,6 +13,16 @@ Shorcut :
 - Backspace | Delete : Delete account
 
 
-Credits:
+Other information:
+- Python ver: 3.6
 
-Icons : https://www.flaticon.com/
+Packages:
+- Pyside2 : 5.14.2
+- fbs: 0.8.6
+- random-password-generator : 2.1.0
+
+
+
+
+Credits:
+- Icons : https://www.flaticon.com/
