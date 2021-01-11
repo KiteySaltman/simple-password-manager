@@ -4,6 +4,7 @@ password manager for desktop
 Format for import from CSV : 
 
 Title | Login/Pseudo | password | Other information
+
 ![csv exemple](/images/csv.png)
 
 Shortcut :
