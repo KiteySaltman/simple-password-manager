@@ -59,7 +59,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.delete_message.setStyleSheet("width:100px;")
         self.delete_message.setText("This account will be delete.")
-        self.delete_message.setInformativeText("Are you sure want to continue?")
+        self.delete_message.setInformativeText("Are you sure ?")
         self.delete_message.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.Cancel)
         self.delete_message.setDefaultButton(QtWidgets.QMessageBox.Cancel)
 
