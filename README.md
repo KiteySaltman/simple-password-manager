@@ -5,7 +5,7 @@ Format for import from CSV :
 
 Title | Login/Pseudo | password | Other information
 
-Shorcut :
+Shortcut :
 
 - Ctrl+A (Good idea? maybe not) : Add account
 - Ctrl+S : Save account
