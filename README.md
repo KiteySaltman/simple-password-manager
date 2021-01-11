@@ -11,3 +11,7 @@ Shorcut :
 - Ctrl+S : Save account
 - Ctrl+P : Generate a random password
 - Backspace | Delete : Delete account
+
+
+Credits:
+Icons : https://www.flaticon.com/
