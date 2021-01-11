@@ -1,6 +1,8 @@
 # simple-password-manager
 password manager for desktop
 
+![SPM](/SPM.PNG)
+
 Format for import from CSV : 
 
 Title | Login | Password | Other information
