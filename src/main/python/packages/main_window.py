@@ -7,7 +7,7 @@ from password_generator import PasswordGenerator
 
 from packages.api.note import Note, get_notes
 from packages.api.export import export_to_csv
-from packages.api.import_csv import import_csv
+from packages.worker import Worker
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -166,12 +166,13 @@ class MainWindow(QtWidgets.QMainWindow):
         if file:
             file_path, file_type = os.path.splitext(file[0])
             if file_type == ".csv":
-                result = import_csv(file=file[0])
-                if result:
-                    self.lw_notes.clear()
-                    self.populate_note()
-            else:
-                print("not csv file")
+                self.thread = QtCore.QThread(self)
+                self.worker = Worker(file=file[0])
+                self.worker.moveToThread(self.thread)
+                self.worker.step.connect(self.step_import)
+                self.thread.started.connect(self.worker.import_csv)
+                self.worker.finished.connect(self.thread.quit)
+                self.thread.start()
 
     def populate_note(self):
         notes = get_notes()
@@ -209,6 +210,11 @@ class MainWindow(QtWidgets.QMainWindow):
                 title = note.title.lower()
                 if (title.find(value.lower()) != -1):
                     self.add_note_to_listwidget(note)
+
+    def step_import(self, note):
+        if note:
+            self.add_note_to_listwidget(note)
+            self.lw_notes.sortItems(QtCore.Qt.AscendingOrder)
 
     def random_password(self):
         selected_item = self.get_selected_lw_item()
