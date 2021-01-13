@@ -20,6 +20,6 @@ class Worker(QtCore.QObject):
                     if row:
                         note = Note(title=row[0], account=row[1], password=row[2], content=row[3])
                         note.save()
-                        self.step.emit(note)
                         time.sleep(0.01)
+                        self.step.emit(note)
             self.finished.emit()
